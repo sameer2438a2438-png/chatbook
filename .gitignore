@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+*.db
+
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Runtime data
+backend/uploads/*
+backend/vector_store/*
+backend/data/*
+!backend/uploads/.gitkeep
+!backend/vector_store/.gitkeep
+!backend/data/.gitkeep
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
