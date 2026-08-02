@@ -39,9 +39,9 @@ def login(payload: LoginRequest, db: DbDep):
     user = db.execute(select(User).where(User.email == email)).scalar_one_or_none()
     if user is None or not verify_password(payload.password, user.hashed_password):
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Incorrect email or password")
-   db.add(LoginLog(user_id=user.id))
-db.commit()
-return _token_for(user)
+    db.add(LoginLog(user_id=user.id))
+    db.commit()
+    return _token_for(user)
 
 
 @router.get("/me", response_model=UserResponse)
