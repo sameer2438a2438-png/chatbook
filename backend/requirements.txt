@@ -13,3 +13,8 @@ pydantic-settings
 PyJWT
 email-validator
 numpy
+sentence-transfirmers
+faiss-cpu
+python-dotenv
+passlib[bcrypt]
+python-jose[cryptography]
