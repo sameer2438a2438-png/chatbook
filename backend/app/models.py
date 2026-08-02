@@ -77,3 +77,9 @@ class ChatMessage(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
     session = relationship("ChatSession", back_populates="messages")
+class LoginLog(Base):
+    __tablename__ = 'login_logs'
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey('users.id'))
+    login_time: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
