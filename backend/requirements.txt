@@ -11,3 +11,4 @@ pypdf
 openai
 pydantic-settings 
 PyJWT
+email-validator
