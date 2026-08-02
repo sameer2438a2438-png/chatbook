@@ -10,3 +10,4 @@ aiofiles
 pypdf
 openai
 pydantic-settings 
+PyJWT
