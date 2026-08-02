@@ -12,3 +12,4 @@ openai
 pydantic-settings 
 PyJWT
 email-validator
+numpy
