@@ -47,3 +47,19 @@ def login(payload: LoginRequest, db: DbDep):
 @router.get("/me", response_model=UserResponse)
 def me(user: CurrentUser):
     return UserResponse.model_validate(user)
+@router.get('/me', response_model=UserResponse)
+def me(user: CurrentUser):
+    return UserResponse.model_validate(user)
+
+
+@router.get('/users')
+def list_users(db: Session = Depends(get_db)):
+    users = db.query(User).all()
+    return [
+        {
+            'id': u.id,
+            'name': u.name,
+            'email': u.email
+        }
+        for u in users
+    ]
